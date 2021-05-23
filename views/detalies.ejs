@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="card">  
+    <% data.forEach(item=>{%>
+        <div id="subcard">
+        <h3><%= item.title %></h3>
+        <p><%= item.company %></p>
+        <p><%= item.location %></p>
+        <p><%= item.url%></p>
+        <p> <%= item.description%></p>
+
+
+
+        <button id= "updatebtn"> update </button>
+        <section id= "updateform">  
+        <form action="/update/<%=item.id%>?_method=put" method="post">
+            <input type="text" name="title" value="<%= item.title %>" >
+            <input type="text" name="companye" value="<%= item.company %>" >
+            <input type="text" name="location" value="<%= item.location %>" >
+            <input type="text" name="url" value="<%= item.url %>" >
+            <input type="text" name="description" value="<%= item.description %>" >
+            <input type="submit" value="update">
+        
+        </form>
+    </section>
+        <form action="/delete/<%=item.id%>?_method=delete" method="post">
+       <input type="submit" value="delete">
+        </form>
+        </div>
+    <%})%>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

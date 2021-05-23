@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>  
+    <% data.forEach(item=>{%>
+        <h3> Title:<%= item.title %></h3>
+        <p> Company :<%= item.company %></p>
+        <p> location :<%= item.location %></p>
+        <p> Url:<%= item.url%></p>
+        
+        <form action="/addtolist" method="post">
+            
+            <input type="hidden" name="title" value="<%= item.title %>" >
+            <input type="hidden" name="companye" value="<%= item.company %>" >
+            <input type="hidden" name="location" value="<%= item.location %>" >
+            <input type="hidden" name="url" value="<%= item.url %>" >
+            
+        </form>
+        
+        <%})%>
+</div>
+
+</body>
+</html>
