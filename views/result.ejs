@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div>  
+    <header>
+        <div class="header-left">
+          <a href="/">Home</a>
+          <a href="/search">Search</a>
+          <a href="/mylist">My list</a>
+        </div>
+    </header>
+    <div id="card">  
     <% data.forEach(item=>{%>
+    <div id="subcard">  
         <h3> Title:<%= item.title %></h3>
         <p> Company :<%= item.company %></p>
         <p> location :<%= item.location %></p>
@@ -22,8 +31,9 @@
             <input type="hidden" name="url" value="<%= item.url %>" >
             
         </form>
-        
+    </div>
         <%})%>
+    </div>
 </div>
 
 </body>

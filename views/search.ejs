@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="/search" method="POST">
+    <header>
+        <div class="header-left">
+          <a href="/">Home</a>
+          <a href="/search">Search</a>
+          <a href="/mylist">My list</a>
+        </div>
+    </header>
+    <h3> search </h3>
+    <form action="/searches" method="POST">
     <label for="search"> description</label>
-    <input type="text" name="type" id=""type>
-    <input type="submit" value="search">
+    <input type="text" name="type" id="type">
+    <input type="submit" value="search" id="black">
 </form>
 </body>
 </html>

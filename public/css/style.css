@@ -10,25 +10,27 @@ body{
     justify-content: space-evenly;
     align-items: center;
    text-align: center;
-   margin-bottom: 100px;
+   margin-bottom: 0px;
+   padding-top: 30px;
 
 }
 #subcard{
 height: 300px;
 width: 500px;
-border: 2px solid red;
+border: 2px solid rgb(210, 174, 252);
 }
 
-.header {
+header {
     overflow: hidden;
     background-color: #f89696;
     padding: 20px 10px;
-    height: 200px;
+    
+   
   }
   
   /* Style the header links */
-  .header a {
-    float: right;
+  header a {
+    float:left;
     color: rgb(247, 239, 239);
     text-align: center;
     padding: 12px;

@@ -30,7 +30,8 @@ const client = new pg.Client(process.env.DATABASE_URL);
 
 // let URL=`https://jobs.github.com/positions.json?location=usa`
 server.get('/',home);
-server.post('/search',searchHandler);
+server.post('/searches',searchHandler);
+server.get('/search',searchpage);
 server.get('/mylist',mylist);
 server.post('addtolist',addtolist);
 server.get('/detalies/:id',getdetalies);
@@ -52,6 +53,9 @@ superagent.get(URL).then(data=>{
 });
 }
 
+function searchpage(req,res){
+    res.render('search');
+}
 
 function searchHandler(req,res){
 let type=req.body.type;
