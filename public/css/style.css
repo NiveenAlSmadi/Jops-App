@@ -42,3 +42,15 @@ header {
   .header-left {
     float: left;
   }
+  .form{
+height: 100px;
+width: 500px;
+    margin-top: 300px;
+  margin-left: 500px;
+    background-color: salmon;
+    border: 1px solid;
+  }
+  #black{
+    color: cornsilk;
+    background-color: black;
+  }
