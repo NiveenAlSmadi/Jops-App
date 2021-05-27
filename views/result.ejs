@@ -18,10 +18,10 @@
     <div id="card">  
     <% data.forEach(item=>{%>
     <div id="subcard">  
-        <h3> Title:<%= item.title %></h3>
-        <p> Company :<%= item.company %></p>
-        <p> location :<%= item.location %></p>
-        <p> Url:<%= item.url%></p>
+        <h3> Title:<%=item.title %></h3>
+        <p> Company :<%=item.company %></p>
+        <p> location :<%=item.location %></p>
+        <p> Url: <a href="<%=item.url%>"> <%=item.url%></a></p>
         
         <form action="/addtolist" method="post">
             
@@ -29,7 +29,7 @@
             <input type="hidden" name="companye" value="<%= item.company %>" >
             <input type="hidden" name="location" value="<%= item.location %>" >
             <input type="hidden" name="url" value="<%= item.url %>" >
-            
+            <input type="submit" value=" add to list">
         </form>
     </div>
         <%})%>

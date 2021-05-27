@@ -33,13 +33,10 @@ server.get('/',home);
 server.post('/searches',searchHandler);
 server.get('/search',searchpage);
 server.get('/mylist',mylist);
-server.post('addtolist',addtolist);
+server.post('/addtolist',addtolist);
 server.get('/detalies/:id',getdetalies);
 server.put('/update/:id',update);
 server.delete('/delete/:id',deleted);
-
-
-
 
 
 //functions
@@ -104,13 +101,10 @@ client.query(SQL,value).then(data=>{
 
 }
 
-
-
-
 function update(req,res){
-let SQL=`UPDATE jobs SET title=$1,company=$2,location=$3,url=$4, description=$5 WHERE id=$5`;
+let SQL=`UPDATE jobs SET title=$1,company=$2,location=$3,url=$4, description=$5 WHERE id=$6`;
 let{ title,company,location,url, description}=req.body;
-let safevalue=[title,company,location,url, description,req.parms.id];
+let safevalue=[title,company,location,url, description,req.params.id];
 client.query(SQL,safevalue).then(data=>{
     res.redirect(`/detalies/${req.params.id}`);
 }).catch(error=>{
@@ -127,6 +121,10 @@ client.query(SQL,[req.params.id]).then(data=>{
 });
 
 }
+
+
+
+
 //helper functions 
 
 function Jops (data){
@@ -134,8 +132,8 @@ function Jops (data){
     this.company=data.company;
     this.location=data.location;
     this.url=data.url;
-
 }
+
 
 function Usajops (data){
     this.title =data.title;
@@ -143,7 +141,6 @@ function Usajops (data){
     this.location=data.location;
     this.url=data.url;
     this.description=data.description;
-
 }
 
 

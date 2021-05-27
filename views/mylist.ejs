@@ -21,9 +21,9 @@
         <h3><%= item.title %></h3>
         <p><%= item.company %></p>
         <p><%= item.location %></p>
-        <p><%= item.url%></p>
+        <p> Url: <a href="<%=item.url%>"> <%=item.url%></a></p>
 
-        <form action="/detailes/<%=item.id%>" method="get">
+        <form action="/detalies/<%=item.id%>" method="get">
         <input type="submit" value="view Detailes">
         </form>
         </div>
